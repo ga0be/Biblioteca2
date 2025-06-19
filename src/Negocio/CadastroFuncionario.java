@@ -60,7 +60,7 @@ public class CadastroFuncionario {
 
         if(funcionario != null) {
             if (funcionario.getAdministrador()) {
-                Funcionario administrador = new Administrador(setNome(), cpf, );
+                Funcionario administrador = new Administrador(funcionario.setNome(nome), cpf, );
                 administrador.setIdConta(id);
                 repositorio.atualizarFuncionario(administrador);
             } else {

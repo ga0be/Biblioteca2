@@ -5,7 +5,9 @@ import Exceptions.Conta.ContaJaExisteException;
 import Exceptions.Conta.ContaNaoExisteException;
 import Exceptions.RepositorioCheioException;
 import Negocio.ClassesBasicas.Cliente;
+import Negocio.ClassesBasicas.Livro;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class CadastroCliente {
@@ -42,8 +44,14 @@ public class CadastroCliente {
         return this.repositorio.buscarCliente(id);
     }
 
-    public void atualizarCliente(int id){
-            return this.repositorio.atualizarCliente();
+    public void atualizarCliente(String nome, int idCliente, String cpf, String telefone, String endereco, String email) throws ContaNaoExisteException{
+
+        Cliente auxCliente = this.repositorio.buscarCliente(idCliente);
+
+        if(auxCliente != null){
+            Cliente cliente = new Cliente(carro, cliente, dataInicio, dataFinal, formaDePagamento);
+            repositorio.setIdCliente(idCliente);
+            reservaRepositorio.atualizarReserva(reserva);
         }
 
     public String listarCarros(){

@@ -44,19 +44,20 @@ public class CadastroCliente {
         return this.repositorio.buscarCliente(id);
     }
 
-    public void atualizarCliente(String nome, int idCliente, String cpf, String telefone, String endereco, String email) throws ContaNaoExisteException{
+    public void atualizarCliente(String nome, int idCliente, String cpf, String telefone, String endereco, String email) throws ContaNaoExisteException {
 
         Cliente auxCliente = this.repositorio.buscarCliente(idCliente);
 
-        if(auxCliente != null){
-            Cliente cliente = new Cliente(carro, cliente, dataInicio, dataFinal, formaDePagamento);
-            repositorio.setIdCliente(idCliente);
-            reservaRepositorio.atualizarReserva(reserva);
+        if (auxCliente != null) {
+            Cliente cliente = new Cliente(nome, cpf, telefone, endereco, email, ultimoId);
+            cliente.setIdCliente(idCliente);
+            repositorio.atualizarCliente(cliente);
         }
+    }
 
-    public String listarCarros(){
+    public String listarClientes(){
         return this.repositorio.toString();
     }
 }
 
-}
+

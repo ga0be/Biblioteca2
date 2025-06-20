@@ -67,7 +67,6 @@ public class CadastroEmprestimo {
 
         if(auxLivro != null && auxEmprestimo!= null){
            Emprestimo emprestimo = new Emprestimo(idReserva, dataInicio, dataFinal, cliente, livro);
-            emprestimo.setNumero(idReserva);
             RepositorioEmprestimo.atualizarEmprestimo(emprestimo);
         }
     }

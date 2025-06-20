@@ -11,8 +11,7 @@ public class Administrador extends Funcionario{
 
 
     public double calcularSalario() {
-        return 0;
-    }
+        return getSalario();    }
 
     public void setSalario(double salario) {
         this.salario = this.salario < 0.0 ? 0.0 : salario;

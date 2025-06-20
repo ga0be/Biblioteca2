@@ -1,6 +1,5 @@
 package Dados;
 
-import Exceptions.DataInvalidaException;
 import Exceptions.Emprestimo.NenhumEmprestimoException;
 import Interfaces.RepositorioEmprestimoInterface;
 import Negocio.ClassesBasicas.Emprestimo;

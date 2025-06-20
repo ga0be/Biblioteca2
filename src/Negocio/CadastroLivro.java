@@ -48,8 +48,7 @@ public class CadastroLivro {
         Livro auxLivro= this.repositorio.procurar(IdLivro);
 
         if (auxLivro!= null) {
-            Livro livro  = new Livro(Titulo, Autor, Categoria, ultimoId, ISBN, qtdDisponivel, anoLancamento, disponivel);
-            livro.setIdLivro(IdLivro);
+            Livro livro  = new Livro(Titulo, Autor, Categoria, IdLivro, ISBN, qtdDisponivel, anoLancamento, disponivel);
             repositorio.atualizarLivro(livro);
         }
     }

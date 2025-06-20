@@ -20,7 +20,7 @@ public class CadastroFuncionario {
         this.ultimoId = 0;
     }
 
-    protected static CadastroFuncionario getInstance(){
+    public static CadastroFuncionario getInstance(){
         if(instancia == null){
             instancia = new CadastroFuncionario();
         }
@@ -51,24 +51,14 @@ public class CadastroFuncionario {
         return repositorio.buscarFuncionario(FuncionarioId);
     }
 
-    public void atualizarFuncionario(int id) throws
-            ContaNaoExisteException{
+    public void atualizarAdm(String nome, String cargo, String login, String senha, String cpf, int idFuncionario, double salario) throws ContaNaoExisteException, RepositorioCheioException {
+        Funcionario administrador = new Administrador(nome, cargo, login, senha, cpf, idFuncionario, salario);
+        repositorio.atualizarFuncionario(administrador);
+    }
 
-        Funcionario funcionario = repositorio.buscarFuncionario(id);
-
-
-
-        if(funcionario != null) {
-            if (funcionario.getAdministrador()) {
-                Funcionario administrador = new Administrador(funcionario.setNome(nome), cpf, );
-                administrador.setIdConta(id);
-                repositorio.atualizarFuncionario(administrador);
-            } else {
-                Conta cliente = new Cliente(nome, cpf, telefone);
-                cliente.setIdConta(id);
-                repositorio.atualizarFuncionario(atendente);
-            }
-        }
+    public void atualizarAtendente(String nome, String cargo, String login, String senha, String cpf, int idFuncionario, String turno, double comicao, double horas) throws ContaNaoExisteException{
+        Funcionario atendente = new Atendente(nome, cargo, login, senha, cpf, idFuncionario, turno, comicao, horas );
+        repositorio.atualizarFuncionario(atendente);
     }
 
     public String listarContas(){

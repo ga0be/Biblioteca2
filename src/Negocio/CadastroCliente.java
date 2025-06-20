@@ -49,8 +49,7 @@ public class CadastroCliente {
         Cliente auxCliente = this.repositorio.buscarCliente(idCliente);
 
         if (auxCliente != null) {
-            Cliente cliente = new Cliente(nome, cpf, telefone, endereco, email, ultimoId);
-            cliente.setIdCliente(idCliente);
+            Cliente cliente = new Cliente(nome, cpf, telefone, endereco, email, idCliente);
             repositorio.atualizarCliente(cliente);
         }
     }
